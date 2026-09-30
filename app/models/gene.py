@@ -3,19 +3,19 @@ from sqlalchemy.orm import relationship
 from app.database import Base
 
 class Gene(Base):
-    __tablename__ = "gene"
+    __tablename__ = "genes"
 
-    gene_id = Column(Integer, primary_key=True, autoincrement=True, index=True)
-    gene_name = Column(String(100), nullable=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    organism_id = Column(Integer,ForeignKey("organism.organism_id"),nullable=False)
+    name = Column(String(100), nullable=True)
+    accession = Column(String(100),nullable=True )
+    description = Column(Text,nullable=True)
     locus_tag = Column(String(50), nullable=False)
     gbkey = Column(String(50), nullable=False)
     start_pos = Column(Integer, nullable=False)
     end_pos = Column(Integer, nullable=False)
     strand = Column(String(1), nullable=False)
     predicted_product = Column(Text, nullable=True)
-    
-    '''FOREIGN KEY RELATIONSHIPS AND RELATIONSHIPS'''
-    seq_genome_id = Column(Integer, ForeignKey("genome_sequence.seq_genome_id"), nullable=False)
-    genome_sequence = relationship("GenomeSequence", back_populates="genes")
-    nucleotide_sequence = relationship("NucleotideSequence", back_populates="gene", uselist=False)
-    proteins = relationship("Protein", back_populates="gene")
+
+    proteins = relationship("Protein",back_populates="gene")
+
