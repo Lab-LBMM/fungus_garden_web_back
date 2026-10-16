@@ -7,7 +7,7 @@ from app.database import Base
 class OrganismDetail(Base):
     __tablename__ = "organism_details"
 
-    id                 = Column(Integer, ForeignKey("organisms.id", ondelete="CASCADE"), primary_key=True)
+    organism_id        = Column(Integer, ForeignKey("organisms.id", ondelete="CASCADE"), primary_key=True)
     genome_size        = Column(Numeric(10, 2), nullable=True)
     gc_content         = Column(Numeric(5, 2),  nullable=True)
     gene_count         = Column(Integer,         nullable=True)
