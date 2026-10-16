@@ -5,7 +5,7 @@ from app.database import Base
 
 
 class Ant(Base):
-    __tablename__ = "ant_attributes"
+    __tablename__ = "ant"
 
     organism_id      = Column(Integer, ForeignKey("organisms.id", ondelete="CASCADE"), primary_key=True)
     caste_system     = Column(JSON,        nullable=True)

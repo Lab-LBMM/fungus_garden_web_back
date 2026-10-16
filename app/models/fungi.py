@@ -5,7 +5,7 @@ from app.database import Base
 
 
 class Fungi(Base):
-    __tablename__ = "fungi_attributes"
+    __tablename__ = "fungi"
 
     organism_id           = Column(Integer, ForeignKey("organisms.id", ondelete="CASCADE"), primary_key=True)
     spores                = Column(String(100), nullable=True)
