@@ -7,7 +7,8 @@ from app.database import Base
 class ProteinSequence(Base):
     __tablename__ = "protein_sequences"
 
-    id             = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    id             = Column(Integer, ForeignKey("sequences.id", ondelete="CASCADE"), primary_key=True)
+    protein_sequence = Column(Text, nullable=True)
     seq_identifier = Column(String(255), unique=True, nullable=False)
     sequence       = Column(Text,    nullable=False)
     seq_length     = Column(Integer, nullable=False)

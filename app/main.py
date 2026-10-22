@@ -6,7 +6,7 @@ from app.Controller.organismDetail_Controller import router as organism_detail_r
 from app.Controller.bacterium_Controller import router as bacterium_router
 from app.Controller.ant_Controller import router as ant_router
 from app.Controller.fungi_Controller import router as fungi_router
-
+from app.Controller.organism_Controller import router as organism_router
 
 
 
@@ -16,6 +16,7 @@ app.include_router(organism_detail_router)
 app.include_router(bacterium_router)
 app.include_router(ant_router)
 app.include_router(fungi_router)
+app.include_router(organism_router)
 
 @app.get("/")
 def root():

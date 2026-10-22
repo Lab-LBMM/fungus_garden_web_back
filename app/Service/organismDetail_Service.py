@@ -14,3 +14,5 @@ def buscar_descricao(db: Session, organism_id: int):
         return None
 
     return detalhe.description
+
+

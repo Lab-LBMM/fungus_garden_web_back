@@ -7,7 +7,8 @@ from app.database import Base
 class NucleotideSequence(Base):
     __tablename__ = "nucleotide_sequences"
 
-    id             = Column(Integer, primary_key=True, autoincrement=True, index=True)
+    id             = Column(Integer, ForeignKey("sequences.id", ondelete="CASCADE"), primary_key=True)
+    nucleotide_chain = Column(Text, nullable=True)
     identifier_seq = Column(String(255), nullable=True, unique=True)
     sequence       = Column(Text,    nullable=False)
     seq_length     = Column(Integer, nullable=False)

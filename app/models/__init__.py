@@ -22,6 +22,15 @@ from .gene                import Gene                 # noqa: F401
 from .nucleotide_sequence import NucleotideSequence   # noqa: F401
 from .protein             import Protein              # noqa: F401
 from .protein_sequence    import ProteinSequence      # noqa: F401
+from .sample              import Sample                # noqa: F401
+from .sampling            import Sampling              # noqa: F401
+from .sample_confection   import SampleConfection      # noqa: F401
+from .literature          import Literature            # noqa: F401
+from .literature_reference import LiteratureReference  # noqa: F401
+from .asv                 import ASV                   # noqa: F401
+from .asv_set             import ASVSet                # noqa: F401
+from .sequencing_run      import SequencingRun         # noqa: F401
+from .sequence            import Sequence              # noqa: F401
 
 __all__ = [
     "Taxa",
@@ -38,4 +47,13 @@ __all__ = [
     "NucleotideSequence",
     "Protein",
     "ProteinSequence",
+    "Sample",
+    "Sampling",
+    "SampleConfection",
+    "Literature",
+    "LiteratureReference",
+    "ASV",
+    "ASVSet",
+    "SequencingRun",
+    "Sequence",
 ]
