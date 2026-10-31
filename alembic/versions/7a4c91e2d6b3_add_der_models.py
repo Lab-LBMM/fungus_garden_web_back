@@ -65,15 +65,12 @@ def upgrade() -> None:
     op.create_table(
         "asvs",
         sa.Column("id", sa.Integer(), autoincrement=True, nullable=False),
-        sa.Column("target_type", sa.String(length=100), nullable=True),
-        sa.Column("species_name", sa.String(length=255), nullable=True),
-        sa.Column("relative_abundance", sa.Numeric(precision=12, scale=8), nullable=True),
-        sa.Column("length_bp", sa.Integer(), nullable=True),
-        sa.Column("confidence", sa.Numeric(precision=5, scale=4), nullable=True),
-        sa.Column("description", sa.Text(), nullable=True),
-        sa.Column("read_count", sa.Integer(), nullable=True),
+        sa.Column("unique_identifier", sa.String(length=100), nullable=False),
+        sa.Column("marker", sa.String(length=20), nullable=False),
+        sa.Column("sequence", sa.Text(), nullable=False),
         sa.PrimaryKeyConstraint("id"),
     )
+    op.create_index("ix_asvs_unique_identifier", "asvs", ["unique_identifier"], unique=True)
 
     op.create_table(
         "samplings",
