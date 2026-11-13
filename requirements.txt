@@ -1,0 +1,33 @@
+# Dependências do backend MicrobioBase (LBMM)
+# Gerado via: pip freeze (venv Python 3.14, Windows x64)
+# Atualizado em: 2026-10-15
+
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi==0.142.0
+starlette==1.7.0
+uvicorn==0.54.0
+
+# ── Banco de dados ────────────────────────────────────────────────────────────
+SQLAlchemy==2.1.1
+PyMySQL==1.2.3
+alembic==1.16.1
+Mako==1.4.3
+MarkupSafe==3.0.4
+
+# ── Validação e serialização ──────────────────────────────────────────────────
+pydantic==2.13.5
+pydantic_core==2.46.5
+annotated-types==0.8.0
+
+# ── Utilitários ───────────────────────────────────────────────────────────────
+python-dotenv==1.2.3
+typing_extensions==4.16.0
+typing-inspection==0.4.4
+anyio==4.15.1
+click==8.5.0
+h11==0.16.0
+idna==3.20
+
+# ── Observabilidade (FastAPI telemetry) ───────────────────────────────────────
+opentelemetry-api==1.45.0
+annotated-doc==0.0.5
