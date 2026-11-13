@@ -2,19 +2,6 @@
 
 Este documento apresenta as instruções para importar sequências ASV a partir de arquivos FASTA compactados para o banco de dados MySQL do projeto LBMM.
 
-## 1. Pré-requisitos
-
-Antes de executar a importação, certifique-se de que:
-
-- O ambiente virtual Python está ativo.
-- As dependências do projeto foram instaladas.
-- O MySQL Server está em execução.
-- O arquivo `.env` está configurado corretamente.
-- As migrations foram aplicadas ao banco de dados.
-- O arquivo `asv_sequences_16S.mod.fasta.gz` está disponível no computador.
-
-Caso ainda não tenha preparado o ambiente, consulte o [README principal](../README.md).
-
 ## 2. Script de importação
 
 O script responsável pela importação é:
@@ -34,7 +21,7 @@ Para cada registro, são utilizados os seguintes campos:
 | `sequence` | Sequência de bases do registro |
 | `id` | Gerado automaticamente pelo banco |
 
-## 3. Executar a importação
+
 
 Execute o script passando o caminho do arquivo FASTA compactado como argumento.
 
@@ -52,7 +39,7 @@ python scripts/import_asv_fasta.py "C:\Users\User\Downloads\asv_sequences_16S.mo
 
 Substitua o caminho de exemplo pelo local em que o arquivo está armazenado no seu computador.
 
-## 4. Validações realizadas pelo script
+## 3. Validações realizadas pelo script
 
 Durante a importação, o script:
 
@@ -67,11 +54,11 @@ O script utiliza o campo `unique_identifier` para identificar registros já cada
 
 Dessa forma, pode ser executado novamente sem inserir identificadores que já existem no banco.
 
-## 5. Resultado da importação
+## 4. Resultado da importação
 
 Ao finalizar, o script informa a quantidade de sequências inseridas e a quantidade de registros ignorados por já existirem.
 
-## 6. Conferir os dados no MySQL Workbench
+
 
 Após a importação, conecte-se ao banco do projeto pelo MySQL Workbench.
 
@@ -95,7 +82,7 @@ Se o MySQL retornar o erro `1046: No database selected`, selecione o schema do p
 USE nome_do_banco;
 ```
 
-## 7. Ordem de execução
+## 5. Ordem de execução
 
 Para realizar a preparação do banco e a importação dos dados, siga esta ordem:
 
